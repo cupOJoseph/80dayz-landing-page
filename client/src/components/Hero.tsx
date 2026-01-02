@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative min-h-[85vh] flex items-center justify-center pt-16 overflow-hidden">
       {/* Subtle graph paper background */}
       <div className="absolute inset-0 graph-paper opacity-60" />
-      
+
       {/* Decorative math symbols */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Sigma className="absolute top-1/4 left-[10%] w-32 h-32 text-primary/5 rotate-12" />
@@ -28,27 +28,28 @@ export function Hero() {
           <span className="inline-block px-3 py-1.5 mb-6 text-xs font-mono text-primary bg-primary/10 border border-primary/20 rounded-md">
             Consulting & Research
           </span>
-          
+
           <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-6 text-foreground leading-tight">
-            Geometric Solutions for{" "}
-            <span className="underline-sketch">Complex Markets</span>
+            Applied Math for{" "}
+            <span className="underline-sketch">Complex Markets.</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            We specialize in designing advanced automated market maker algorithms 
-            using applied mathematics, superelliptical curves, and polar coordinate systems.
+            We specialize in designing
+            geometric systems and using applied mathematics
+            to solve complex real world problems.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="#research" 
+            <a
+              href="#research"
               className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
               data-testid="link-explore-research"
             >
               Explore Research
             </a>
-            <a 
-              href="#simulations" 
+            <a
+              href="#simulations"
               className="px-6 py-3 border border-border bg-card hover:border-primary/50 font-medium rounded-md hover:text-primary transition-all"
               data-testid="link-view-simulations"
             >
@@ -58,7 +59,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
