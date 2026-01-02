@@ -1,30 +1,35 @@
-import { motion } from "framer-motion";
-import { Terminal } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <div className="bg-primary/10 p-2 rounded-sm border border-primary/20">
-            <Terminal className="w-6 h-6 text-primary" />
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-primary/10 rounded-md">
+            <BookOpen className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <h1 className="font-mono text-xl font-bold tracking-tighter text-white">
-              80 DAYZ INC.
+            <h1 className="font-serif text-xl font-bold tracking-tight text-foreground">
+              80 Dayz Inc.
             </h1>
-            <p className="text-[10px] text-primary font-mono tracking-widest uppercase opacity-80">
-              Applied Math & Geometry
+            <p className="text-[10px] text-muted-foreground font-mono tracking-wide uppercase">
+              Applied Mathematics Research
             </p>
           </div>
         </div>
 
-        <nav className="hidden md:flex space-x-8">
-          <a href="#research" className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors">
-            ./RESEARCH
+        <nav className="hidden md:flex items-center gap-6">
+          <a 
+            href="#research" 
+            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            Research
           </a>
-          <a href="#simulations" className="text-sm font-mono text-muted-foreground hover:text-primary transition-colors">
-            ./SIMULATIONS
+          <a 
+            href="#simulations" 
+            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            Simulations
           </a>
         </nav>
       </div>

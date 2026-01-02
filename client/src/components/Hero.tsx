@@ -1,66 +1,69 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Sigma, Pi } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Abstract Geometry Background */}
+    <section className="relative min-h-[85vh] flex items-center justify-center pt-16 overflow-hidden">
+      {/* Subtle graph paper background */}
+      <div className="absolute inset-0 graph-paper opacity-60" />
+      
+      {/* Decorative math symbols */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-3xl" />
-        
-        {/* Grid lines decoration */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" width="100%" height="100%">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+        <Sigma className="absolute top-1/4 left-[10%] w-32 h-32 text-primary/5 rotate-12" />
+        <Pi className="absolute bottom-1/4 right-[15%] w-24 h-24 text-accent/10 -rotate-6" />
+        <div className="absolute top-1/3 right-[20%] font-serif text-8xl text-primary/5 rotate-3">
+          f(x)
+        </div>
+        <div className="absolute bottom-1/3 left-[15%] font-mono text-6xl text-muted-foreground/10 -rotate-6">
+          dx/dt
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-3 py-1 mb-6 text-xs font-mono text-primary bg-primary/10 border border-primary/20">
-            CONSULTING & RESEARCH
+          <span className="inline-block px-3 py-1.5 mb-6 text-xs font-mono text-primary bg-primary/10 border border-primary/20 rounded-md">
+            Consulting & Research
           </span>
           
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-            Geometric Solutions<br />for Complex Markets
+          <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-6 text-foreground leading-tight">
+            Geometric Solutions for{" "}
+            <span className="underline-sketch">Complex Markets</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            We specialize in designing advanced automated market maker algorithms and financial primitives using applied mathematics and non-euclidean geometry.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+            We specialize in designing advanced automated market maker algorithms 
+            using applied mathematics, superelliptical curves, and polar coordinate systems.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
               href="#research" 
-              className="px-8 py-4 bg-primary text-primary-foreground font-mono font-bold hover:bg-primary/90 transition-colors w-full sm:w-auto text-center"
+              className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
+              data-testid="link-explore-research"
             >
-              EXPLORE RESEARCH
+              Explore Research
             </a>
             <a 
               href="#simulations" 
-              className="px-8 py-4 border border-border hover:border-primary/50 bg-background/50 backdrop-blur font-mono font-bold hover:text-primary transition-all w-full sm:w-auto text-center"
+              className="px-6 py-3 border border-border bg-card hover:border-primary/50 font-medium rounded-md hover:text-primary transition-all"
+              data-testid="link-view-simulations"
             >
-              VIEW SIMULATIONS
+              View Simulations
             </a>
           </div>
         </motion.div>
       </div>
 
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
-        <ArrowDown className="text-muted-foreground w-6 h-6" />
+        <ArrowDown className="text-muted-foreground w-5 h-5" />
       </motion.div>
     </section>
   );
